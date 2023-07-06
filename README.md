@@ -11,6 +11,7 @@ Task link: https://keen-nurse-d0d.notion.site/RoR-Test-4ed53b60c0864563922ee572f
 * Redis 7
 
 Setting up locally:
+- make sure you created .env file and have all ENV vars set
 - make sure Postgres server is up and running
 - make sure Redis server is up and running
 - rails db:create
