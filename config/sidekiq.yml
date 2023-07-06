@@ -1,0 +1,11 @@
+---
+:timeout: 25
+:concurrency: <%= ENV.fetch('SIDEKIQ_CONCURRENCY', 5) %>
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 10
+:queues:
+  - critical
+  - default
+  - low
