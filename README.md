@@ -23,3 +23,6 @@ Docker:
 - docker-compose build
 - docker-compose up
 
+Rake tasks to run:
+- `rails graded_cards:inserts_using_sidekiq`
+- `rails graded_cards:inserts_using_threads`
