@@ -14,7 +14,7 @@ x-backend:
     DB_NAME: cards_db
     SECRET_KEY_BASE: STUB
     RAILS_MAX_THREADS: 350
-    SIDEKIQ_CONCURRENCY: 205
+    SIDEKIQ_CONCURRENCY: 50
     REDIS_URL: redis://redis:6379/0
   restart: on-failure:3
   stdin_open: true
@@ -33,6 +33,7 @@ services:
 
   db:
     image: postgres:15
+    command: postgres -c 'max_connections=350'
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: secret

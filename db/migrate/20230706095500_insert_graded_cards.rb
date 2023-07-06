@@ -1,4 +1,4 @@
-class InsertGiftedCards < ActiveRecord::Migration[7.0]
+class InsertGradedCards < ActiveRecord::Migration[7.0]
   def up
     query = 'COPY graded_cards(name, card_id, grade, qualifier, created_at, updated_at) FROM STDIN'
     data = ''
@@ -7,7 +7,6 @@ class InsertGiftedCards < ActiveRecord::Migration[7.0]
     hash_data = {}
 
     Card.find_each do |card|
-
       graded_cards_pair = 0
 
       while graded_cards_pair < 2
@@ -32,7 +31,6 @@ class InsertGiftedCards < ActiveRecord::Migration[7.0]
     raw.put_copy_end
     while raw.get_result; end
     ActiveRecord::Base.connection_pool.checkin(conn)
-
   end
 
   def down

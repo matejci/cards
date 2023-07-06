@@ -24,5 +24,5 @@ Docker:
 - docker-compose up
 
 Rake tasks to run:
-- `rails graded_cards:inserts_using_sidekiq`
 - `rails graded_cards:inserts_using_threads`
+- `rails graded_cards:inserts_using_sidekiq`

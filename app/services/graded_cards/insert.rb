@@ -11,6 +11,8 @@ module GradedCards
 
     def call
       insert_graded_card
+    rescue StandardError => e
+      Rails.logger.info(e.message)
     end
 
     private

@@ -8,9 +8,9 @@ namespace :graded_cards do
     100.times do
       threads << Thread.new do
         GradedCards::Insert.new(card_id: Card.last.id,
-                               name: 'Task 2 with threads',
-                               qualifier: 'OD',
-                               grade: '1.0').call
+                                name: 'Task 2 with threads',
+                                qualifier: 'OD',
+                                grade: '1.0').call
       end
     end
 

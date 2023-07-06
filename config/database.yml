@@ -1,24 +1,4 @@
 
-# default: &default
-#   adapter: postgresql
-#   encoding: unicode
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
-# development:
-#   <<: *default
-#   database: cards_app_development
-
-# test:
-#   <<: *default
-#   database: cards_app_test
-
-# production:
-#   <<: *default
-#   database: cards_app_production
-#   username: cards_app
-#   password: <%= ENV["CARDS_APP_DATABASE_PASSWORD"] %>
-
-
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -29,6 +9,8 @@ default: &default
   pool: <%= ENV["RAILS_MAX_THREADS"] { 5 } %>
   variables:
     statement_timeout: 5000
+  timeout: 2000
+  wait_timeout: 5
 
 development:
   <<: *default
